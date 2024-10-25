@@ -19,8 +19,8 @@
 /* Media Query per mobile */
 @media (max-width: 768px) {
     .card {
-        width: 90vw; /* Larghezza per mobile */
-        height: 50vh; /* Altezza per mobile */
+        width: 100vw; /* Larghezza per mobile */
+        height: 60vh; /* Altezza per mobile */
     }
 }
 
