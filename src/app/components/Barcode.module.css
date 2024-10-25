@@ -1,0 +1,5 @@
+/* components/Barcode.module.css */
+.barcode {
+    margin: 0 auto; /* Centra il codice a barre */
+    display: block; /* Permette la centrazione in caso di larghezza */
+}
