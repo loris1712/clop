@@ -198,7 +198,7 @@
 
 /* Primo gradino, più grande */
 .stepBottom {
-    width: 500px;  /* Larghezza del gradino inferiore */
+    width: 100%;  /* Larghezza del gradino inferiore */
     height: 40px;  /* Altezza del gradino inferiore */
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -211,7 +211,7 @@
 
 /* Secondo gradino, più piccolo */
 .stepTop {
-    width: 400px;  /* Larghezza del gradino superiore */
+    width: 80%;  /* Larghezza del gradino superiore */
     height: 30px;  /* Altezza del gradino superiore */
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
