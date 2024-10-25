@@ -207,7 +207,7 @@
     transform: perspective(800px) rotateX(25deg); /* Prospettiva e inclinazione */
     position: absolute;
     bottom: 0;
-}
+} 
 
 /* Secondo gradino, più piccolo */
 .stepTop {
