@@ -1,26 +1,23 @@
-/* Stile generale della card */
 .card {
-    width: 40vw; /* Larghezza della card */
-    height: 90vh; /* Altezza della card */
-    perspective: 1500px; /* Imposta la prospettiva per l'effetto 3D */
+    width: 40vw;
+    height: 90vh;
+    perspective: 1500px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.5s ease; /* Transizione dolce per hover */
+    transition: transform 0.5s ease;
 }
 
-/* Media Query per tablet */
 @media (max-width: 1024px) {
     .card {
-        width: 30vw; /* Larghezza per tablet */
-        height: 70vh; /* Altezza per tablet */
+        width: 30vw;
+        height: 70vh;
     }
 }
 
-/* Media Query per mobile */
 @media (max-width: 768px) {
     .card {
-        width: 100vw; /* Larghezza per mobile */
-        height: 60vh; /* Altezza per mobile */
+        width: 100vw;
+        height: 60vh;
     }
 }
 
@@ -36,7 +33,6 @@
     z-index: 1;
 }
 
-/* Parte frontale della card */
 .cardFront, .cardBack {
     position: absolute;
     width: 100%;
@@ -57,7 +53,28 @@
     animation: metalShine 2s infinite alternate;
 }
 
-/* Parte frontale con dettagli */
+.cardFrontVip, .cardBackVip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 15px;
+
+    box-shadow: inset 0 4px 6px rgba(255, 215, 0, 0.1), /* Ombra chiara dorata */
+                inset 0 -4px 6px rgba(218, 165, 32, 0.4); /* Ombra scura dorata */
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 1), rgba(184, 134, 11, 1)),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, transparent 75%, transparent 100%);
+    
+    background-blend-mode: overlay;
+    background-size: 1px 1px;
+    color: white;
+    animation: metalShine 2s infinite alternate;
+}
+
 .frontContent {
     display: flex;
     flex-direction: column;
@@ -67,55 +84,51 @@
     height: 100%;
 }
 
-/* Titolo con stile tipografico */
 .cardTitle {
-    font-size: 28px; /* Grandezza del titolo per desktop */
+    font-size: 28px; 
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: auto;
-    color: #cccccc; /* Colore di base grigio chiaro */
-    background: linear-gradient(135deg, #ffffff 30%, #cccccc 50%, #999999 70%); /* Gradiente per effetto metallico */
-    -webkit-background-clip: text; /* Clip del background per mostrare solo il testo */
-    background-clip: text; /* Clip del background per mostrare solo il testo */
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5)); /* Ombra esterna per profondità */
-    position: relative; /* Posizionamento relativo per il riflesso */
-    overflow: hidden; /* Nasconde il contenuto che esce */
-    transition: transform 0.3s, color 0.3s; /* Transizioni per hover */
+    color: #cccccc;
+    background: linear-gradient(135deg, #ffffff 30%, #cccccc 50%, #999999 70%); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+    position: relative; 
+    overflow: hidden;
+    transition: transform 0.3s, color 0.3s;
     text-align: center;
     margin-top: auto;
 }
 
-/* Hover effetto per il titolo */
 .card:hover .cardTitle {
-    transform: scale(1.05); /* Ingrandisce il titolo al passaggio del mouse */
-    color: #ffffff; /* Colore del testo al passaggio del mouse */
+    transform: scale(1.05);
+    color: #ffffff;
 }
 
-/* Effetto riflesso */
 .cardTitle::after {
-    content: attr(data-reflection); /* Usa il contenuto del titolo come riflesso */
+    content: attr(data-reflection);
     position: absolute;
     left: 0;
-    top: 100%; /* Posiziona sotto il titolo */
-    transform: scaleY(-1); /* Inverte verticalmente per l'effetto riflesso */
-    color: rgba(255, 255, 255, 0.3); /* Colore del riflesso (bianco traslucido) */
-    text-shadow: none; /* Rimuove l'ombra dal riflesso */
-    opacity: 0.5; /* Maggiore trasparenza per l'effetto di riflesso */
-    filter: blur(2px); /* Aggiunge un effetto di sfocatura al riflesso */
-    white-space: nowrap; /* Impedisce il wrapping del testo */
+    top: 100%;
+    transform: scaleY(-1);
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: none;
+    opacity: 0.5; 
+    filter: blur(2px);
+    white-space: nowrap;
 }
 
-/* Frase VIP Pass */
 .vipPass {
     font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    color: #cccccc; /* Colore di base grigio chiaro */
-    background: linear-gradient(135deg, #ffffff 30%, #cccccc 50%, #999999 70%); /* Gradiente per effetto metallico */
-    -webkit-background-clip: text; /* Clip del background per mostrare solo il testo */
-    background-clip: text; /* Clip del background per mostrare solo il testo */
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5)); /* Ombra esterna per profondità */
+    color: #cccccc;
+    background: linear-gradient(135deg, #ffffff 30%, #cccccc 50%, #999999 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
     position: absolute;
     left: 0;
 }
@@ -130,14 +143,12 @@
     filter: grayscale(100%) brightness(150%);
 }
 
-/* Nome in basso */
 .author {
     position: absolute;
     bottom: 5px;
-    font-size: 1rem; /* Dimensione del font per il nome */
+    font-size: 1rem;
 }
 
-/* Parte posteriore della card */
 .cardBack {
     position: absolute;
     width: 100%;
@@ -159,33 +170,49 @@
     text-align: center;
 }
 
-/* Logo grande nella parte posteriore */
+.cardBackVip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: inset 0 4px 6px rgba(255, 215, 0, 0.1), /* Ombra chiara dorata */
+                inset 0 -4px 6px rgba(218, 165, 32, 0.4); /* Ombra scura dorata */
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 1), rgba(184, 134, 11, 1)),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, transparent 75%, transparent 100%);
+    background-blend-mode: overlay;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .logoBack {
     width: 60px;
     height: auto;
     margin-bottom: 20px;
 }
 
-/* Codice a barre */
 .barcode {
     width: 80%;
     height: auto;
     margin-bottom: 20px;
 }
 
-/* Tipo della card (es. VIP o altro) */
 .type {
     font-size: 1.2rem;
     color: #bbb;
 }
 
-/* Black Card */
 .cardBlack {
     background-color: #0a0a0a;
     background-image: linear-gradient(145deg, #1c1c1c, #000000);
 }
 
-/* Contenitore del piedistallo */
 .pedestal {
     display: flex;
     flex-direction: column;
@@ -196,33 +223,36 @@
     width: 100%;
 }
 
-/* Primo gradino, più grande */
 .stepBottom {
-    width: 100%;  /* Larghezza del gradino inferiore */
-    height: 40px;  /* Altezza del gradino inferiore */
+    width: 100%; 
+    height: 40px; 
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    background: radial-gradient(circle at center, #333, #111); /* Gradiente per profondità */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Ombra per effetto rialzato */
-    transform: perspective(800px) rotateX(25deg); /* Prospettiva e inclinazione */
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 1), rgba(184, 134, 11, 1)),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, transparent 75%, transparent 100%);
+    background-blend-mode: overlay;
+    box-shadow: inset 0 4px 6px rgba(255, 215, 0, 0.1), inset 0 -4px 6px rgba(218, 165, 32, 0.4),
+                0px 5px 15px rgba(0, 0, 0, 0.5); /* Ombra esterna */
+    transform: perspective(800px) rotateX(25deg);
     position: absolute;
     bottom: 0;
 } 
 
-/* Secondo gradino, più piccolo */
 .stepTop {
-    width: 80%;  /* Larghezza del gradino superiore */
-    height: 30px;  /* Altezza del gradino superiore */
+    width: 80%; 
+    height: 30px;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    background: radial-gradient(circle at center, #555, #222);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 1), rgba(184, 134, 11, 1)),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, transparent 75%, transparent 100%);
+    background-blend-mode: overlay;
+    box-shadow: inset 0 4px 6px rgba(255, 215, 0, 0.1), inset 0 -4px 6px rgba(218, 165, 32, 0.4),
+                0px 5px 15px rgba(0, 0, 0, 0.3); /* Ombra esterna */
     transform: perspective(800px) rotateX(25deg);
     position: absolute;
-    bottom: 25px; /* Solleva il gradino superiore */
+    bottom: 25px;
 }
 
-/* Animazione di rotazione */
 @keyframes rotate {
     from {
         transform: rotateY(0deg);
@@ -232,7 +262,6 @@
     }
 }
 
-/* Effetto di lucentezza metallica */
 @keyframes metalShine {
     0% {
         background-position: 0% 0%;
@@ -242,15 +271,13 @@
     }
 }
 
-/* Stile grafico per il titolo e altri testi */
 .cardTitle, .vipPass, .author, .type {
-    font-family: 'Arial', sans-serif; /* Font di base */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Ombra per profondità */
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Stile per l'illuminazione */
 .cardFront:hover, .cardBack:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); /* Luminosità extra al passaggio del mouse */
-    transition: box-shadow 0.3s ease; /* Transizione per l'illuminazione */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.3s ease;
 }
 

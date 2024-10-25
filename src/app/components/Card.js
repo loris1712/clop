@@ -7,9 +7,8 @@ const Card = ({ nickname, type }) => {
     return (
         <div className={styles.card}>
             <div className={styles.cardInner}>
-                {/* Parte frontale della card */}
-                <div className={styles.cardFront}>
-                    <div className={styles.frontContent}>
+            <div className={type === 'vip' ? styles.cardFrontVip : styles.cardFront}>
+            <div className={styles.frontContent}>
                         <p className={styles.vipPass}>VIP Pass</p>
                         <h2 className={styles.cardTitle}>{nickname}</h2>
                         <img src="./logo.svg" alt="Logo" className={styles.logoFront} />
@@ -20,14 +19,12 @@ const Card = ({ nickname, type }) => {
                     </div>
                 </div>
                 
-                {/* Parte posteriore della card */}
-                <div className={styles.cardBack}>
+                <div className={type === 'vip' ? styles.cardBackVip : styles.cardBack}>
                     <img src="./logo.svg" alt="Logo" className={styles.logoBack} />
                     <Barcode data="18185182358138509" />
                     <p className={styles.type}>{type}</p>
                 </div>
             </div>
-            {/* Piedistallo */}
             <div className={styles.pedestal}>
               <div className={styles.stepBottom}></div>
               <div className={styles.stepTop}></div>

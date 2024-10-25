@@ -26,10 +26,9 @@ export default function CardPage() {
     }
 
     if (!nicknameData) {
-        return <div>Token non valido</div>; // Gestisci il caso di token non valido
+        return <div>Token non valido</div>;
     }
 
-    // Passa nickname e type al componente Card
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 <Card nickname={nicknameData.nickname} type={nicknameData.type} />

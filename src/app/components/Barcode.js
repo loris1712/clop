@@ -3,10 +3,8 @@ import React from 'react';
 import styles from './Barcode.module.css';
 
 const Barcode = ({ data }) => {
-    // Funzione per generare la rappresentazione binaria del codice a barre
     const generateBarcodePattern = (data) => {
-        // Convertiamo i caratteri in un pattern binario semplice
-        return data.split('').map(char => parseInt(char) % 2); // Ogni cifra genera 1 o 0
+        return data.split('').map(char => parseInt(char) % 2);
     };
 
     const pattern = generateBarcodePattern(data);
@@ -14,7 +12,7 @@ const Barcode = ({ data }) => {
     return (
         <svg
             className={styles.barcode}
-            width={pattern.length * 10} // Larghezza in base al numero di barre
+            width={pattern.length * 10}
             height="100"
             viewBox={`0 0 ${pattern.length * 10} 100`}
         >
@@ -22,9 +20,9 @@ const Barcode = ({ data }) => {
                 <rect
                     key={index}
                     x={index * 10}
-                    y={bit === 1 ? 0 : 20} // Sposta verso il basso se è uno spazio
+                    y={bit === 1 ? 0 : 20}
                     width="10"
-                    height={bit === 1 ? 100 : 40} // Altezza barra nera o spazio
+                    height={bit === 1 ? 100 : 40}
                     fill={bit === 1 ? '#ccc' : 'white'}
                 />
             ))}
