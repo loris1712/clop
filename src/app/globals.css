@@ -21,7 +21,7 @@ body {
 
   margin: 0;
   height: 100vh;
-  background: url('../../public/bg1.jpg') no-repeat center center fixed; /* Sostituisci con il percorso della tua immagine */
+  background: url('../../public/bg2.png') no-repeat center center fixed; /* Sostituisci con il percorso della tua immagine */
   background-size: cover;
   display: flex;
   justify-content: center;
