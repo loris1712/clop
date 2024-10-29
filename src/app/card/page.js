@@ -30,8 +30,12 @@ export default function CardPage() {
     }
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <Card nickname={nicknameData.nickname} type={nicknameData.type} />
+<div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+}} className="cardDiv">                <Card nickname={nicknameData.nickname} type={nicknameData.type} />
         </div>
     );
 }
