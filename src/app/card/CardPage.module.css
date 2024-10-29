@@ -1,34 +1,27 @@
-/* CardPage.css */
-
-/* Stile per il titolo LED blu-azzurrino con effetto 3D */
-.ledTitle {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #ffffff; /* Colore grigio per l'effetto pietra */
-    position: relative;
-    margin-bottom: 1rem;
-    text-align: center; /* Centra il testo */
-    text-shadow: 
-        0 0 10px rgba(176, 176, 176, 0.2), /* Ombra chiara */
-        0 0 10px rgba(176, 176, 176, 0.2), /* Ombra più scura */
-        0 0 30px rgba(0, 204, 255, 0.2), /* Ombra blu-azzurrina */
-        0 0 10px rgba(0, 204, 255, 0.2), /* Ombra blu-azzurrina */
-        0 0 10px rgba(0, 204, 255, 0.3), /* Ombra intensa blu-azzurrina */
-        0 0 10px rgba(0, 204, 255, 0.2); /* Ombra blu-azzurrina */
-}
-
-/* Effetto 3D */
-.ledTitle::before {
-    content: 'CLEOPE'; /* Copia del testo per il 3D */
-    position: absolute;
-    top: 4px; /* Sposta leggermente in alto */
-    left: 4px; /* Sposta leggermente a sinistra */
-    color: rgba(0, 102, 153, 0.7); /* Colore blu scuro per l'effetto fluo */
-    filter: blur(5px); /* Effetto sfocato */
-    z-index: -1; /* Posiziona dietro al titolo principale */
-}
-
 .metallicText {
+    font-size: 2rem; /* Dimensione del testo */
+    font-weight: 900; /* Grassetto */
+    color: transparent; /* Colore trasparente per il gradiente */
+    background: linear-gradient(
+        45deg,
+        rgba(0, 204, 255, 0.2) 5%,
+        #fff 10%,
+        rgba(0, 204, 255, 0.2) 30%,
+        #ddd 50%,
+        rgba(0, 204, 255, 0.2) 70%,
+        hsl(0, 0%, 100%) 80%,
+        #999 95%
+    ); /* Gradiente per effetto metallico */
+    background-clip: text; /* Applica il gradiente solo al testo */
+    -webkit-background-clip: text; /* Supporto per Safari */
+    position: relative; /* Necessario per il posizionamento dell'ombra */
+    text-shadow: 
+        1px 1px 2px rgba(0, 204, 255, 0.3), /* Ombra chiara */
+        2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra scura */
+    transition: transform 0.2s ease-in-out; /* Transizione per l'effetto hover */
+}
+
+.metallicText2{
     font-size: 2rem; /* Dimensione del testo */
     font-weight: 900; /* Grassetto */
     color: transparent; /* Colore trasparente per il gradiente */
@@ -63,45 +56,4 @@
 /* Effetto hover */
 .metallicText:hover {
     transform: translateY(-2px); /* Sollevamento del testo al passaggio del mouse */
-}
-
-
-/* Stile per i LED del countdown */
-.led-countdown {
-    text-align: center;
-    background-color: rgba(255, 0, 0, 0.8); /* Rosso LED */
-    color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 3rem;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-    width: 60px;
-}
-
-/* Contenitore principale */
-.cardDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-color: black; /* Sfondo nero per stile LED */
-}
-
-/* Stile per il countdown */
-.countdown {
-    color: white;
-    margin-top: 2rem;
-    display: flex;
-    gap: 0.5rem;
-    font-size: 2rem;
-}
-
-/* Stile per i due punti del countdown */
-.countdown-separator {
-    color: white;
-    font-size: 2rem;
-    opacity: 0.7;
 }
