@@ -1,4 +1,4 @@
-.metallicText {
+.metallicText2 {
     font-size: 2rem; /* Dimensione del testo */
     font-weight: 900; /* Grassetto */
     color: transparent; /* Colore trasparente per il gradiente */
@@ -21,7 +21,7 @@
     transition: transform 0.2s ease-in-out; /* Transizione per l'effetto hover */
 }
 
-.metallicText2{
+.metallicText{
     font-size: 2rem; /* Dimensione del testo */
     font-weight: 900; /* Grassetto */
     color: transparent; /* Colore trasparente per il gradiente */
