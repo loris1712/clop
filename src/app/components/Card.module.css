@@ -1,6 +1,6 @@
 .card {
-    width: 40vw;
-    height: 90vh;
+    width: 35vw;
+    height: 85vh;
     perspective: 1500px;
     position: relative;
     overflow: hidden;
@@ -23,10 +23,10 @@
 
 .cardInner {
     position: absolute;
-    top: 10%;
-    left: 17%;
-    width: 65%;
-    height: 80%;
+    top: 15%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
     margin-left: 0;
     transform-style: preserve-3d;
     animation: rotate 10s linear infinite;
@@ -43,15 +43,22 @@
     align-items: flex-start;
     padding: 20px;
     border-radius: 15px;
+    
+    /* Ombre e luci */
     box-shadow: 
         0 8px 12px rgba(0, 0, 0, 0.3), /* Ombra principale */
         inset 0 4px 6px rgba(255, 255, 255, 0.2), /* Luce soffusa dall’alto */
         inset 0 -4px 6px rgba(0, 0, 0, 0.4); /* Ombra interna dal basso */
+
+    /* Sfondo laminato e granulare */
+    background: 
+        linear-gradient(145deg, rgb(36 36 36), rgb(10 10 10)), 
+        radial-gradient(circle at top left, rgba(58, 55, 55, 0.81), transparent 70%), 
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Texture per effetto granulare */
     
-    background: linear-gradient(145deg, rgb(36 36 36), rgb(10 10 10)), radial-gradient(circle at top left, rgb(58 55 55 / 81%), transparent 70%);
-    background-blend-mode: overlay, screen;
+    background-blend-mode: overlay, screen, normal;
+    background-size: cover, 200% 200%, auto;
     color: white;
-    background-size: 200% 200%;
     transition: transform 0.4s ease-in-out;
 }
 
@@ -104,18 +111,9 @@
     }
 }
 
-/* Interazione hover per aumentare l’effetto */
-.cardFront:hover, .cardBack:hover {
-    transform: scale(1.02);
-    box-shadow: 
-        0 12px 16px rgba(0, 0, 0, 0.4), 
-        inset 0 4px 8px rgba(255, 255, 255, 0.2),
-        inset 0 -6px 8px rgba(0, 0, 0, 0.5);
-}
-
 /* Numero seriale */
 .serialNumber {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     letter-spacing: 0.1rem;
     color: #575757;
     margin-top: 5px;
@@ -176,7 +174,7 @@
 }
 
 .cardTitle {
-    font-size: 28px; 
+    font-size: 20px; 
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -191,11 +189,6 @@
     transition: transform 0.3s, color 0.3s;
     text-align: center;
     margin-top: auto;
-}
-
-.card:hover .cardTitle {
-    transform: scale(1.05);
-    color: #ffffff;
 }
 
 .cardTitle::after {
@@ -230,7 +223,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 30px;
+    width: 24px;
     height: auto;
     filter: grayscale(100%) brightness(150%);
 }
@@ -284,7 +277,7 @@
 }
 
 .logoBack {
-    width: 60px;
+    width: 45px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -359,14 +352,18 @@
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     position: absolute;
-    bottom: 0;
-    background: linear-gradient(145deg, rgba(60, 60, 60, 0.9), rgba(30, 30, 30, 1)),
-                linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent);
-    background-blend-mode: overlay;
+    bottom: 0;/* Ombre e luci */
     box-shadow: 
-        inset 0 8px 12px rgba(255, 255, 255, 0.1),
-        inset 0 -8px 10px rgba(0, 0, 0, 0.4),
-        0 8px 12px rgba(0, 0, 0, 0.6);
+        0 8px 12px rgba(0, 0, 0, 0.3), /* Ombra principale */
+        inset 0 4px 6px rgba(255, 255, 255, 0.2), /* Luce soffusa dall’alto */
+        inset 0 -4px 6px rgba(0, 0, 0, 0.4); /* Ombra interna dal basso */
+
+    /* Sfondo laminato e granulare */
+    background: 
+        linear-gradient(145deg, rgb(36 36 36), rgb(10 10 10)), 
+        radial-gradient(circle at top left, rgba(58, 55, 55, 0.81), transparent 70%), 
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Texture per effetto granulare */
+    background-blend-mode: overlay;
     transform: perspective(800px) rotateX(20deg);
 }
 
@@ -377,13 +374,18 @@
     border-top-right-radius: 50%;
     position: absolute;
     bottom: 25px;
-    background: linear-gradient(145deg, rgba(60, 60, 60, 0.9), rgba(30, 30, 30, 1)),
-                linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent);
-    background-blend-mode: overlay;
+    /* Ombre e luci */
     box-shadow: 
-        inset 0 8px 12px rgba(255, 255, 255, 0.1),
-        inset 0 -8px 10px rgba(0, 0, 0, 0.4),
-        0 8px 12px rgba(0, 0, 0, 0.6);
+        0 8px 12px rgba(0, 0, 0, 0.3), /* Ombra principale */
+        inset 0 4px 6px rgba(255, 255, 255, 0.2), /* Luce soffusa dall’alto */
+        inset 0 -4px 6px rgba(0, 0, 0, 0.4); /* Ombra interna dal basso */
+
+    /* Sfondo laminato e granulare */
+    background: 
+        linear-gradient(145deg, rgb(36 36 36), rgb(10 10 10)), 
+        radial-gradient(circle at top left, rgba(58, 55, 55, 0.81), transparent 70%), 
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Texture per effetto granulare */
+    background-blend-mode: overlay;
     transform: perspective(800px) rotateX(20deg);
 }
 
@@ -414,7 +416,7 @@
 .author{
     color: #bbb;
     margin-top: 1rem;
-    font-size: 8px;
+    font-size: 6px;
     letter-spacing: 2px;
     color: #575757;
     background: linear-gradient(135deg, #ffffff 30%, #cccccc 50%, #999999 70%);
@@ -422,10 +424,5 @@
     background-clip: text;
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
     text-transform: uppercase;
-}
-
-.cardFront:hover, .cardBack:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-    transition: box-shadow 0.3s ease;
 }
 

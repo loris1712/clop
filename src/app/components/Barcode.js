@@ -20,7 +20,7 @@ const Barcode = ({ data }) => {
     return (
         <svg
             className={styles.barcode}
-            width={pattern.length * 4}  // Spazio totale esteso
+            width="200"  
             height="100"
             viewBox={`0 0 ${pattern.length * 2} 100`}
         >
