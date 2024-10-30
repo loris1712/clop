@@ -4,6 +4,7 @@ export function getNicknameFromToken(token) {
       "alexandrinamolinaro": { nickname: "Alexandrina Molinaro", type: "regular" },
       "tommaso.santinii": { nickname: "Tommaso Santini", type: "regular" },
       "loris.caputo": { nickname: "Loris Caputo", type: "vip" },
+      "andreanittoli": { nickname: "Andrea Nittoli", type: "vip" },
       "_andreaspeziale_": { nickname: "Andrea Speziale", type: "regular" },
       "Giuliaapolizzi": { nickname: "Giulia Polizzi", type: "regular" },
       "giada.martinaa": { nickname: "Giada Martina Pici", type: "regular" },
