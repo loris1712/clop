@@ -99,7 +99,7 @@ export default function CardPage() {
             className="cardDiv"
         >
             <h1 className={styles.metallicText}>
-                CLEOPE <span className={styles.metallicTextSpan}>VOL. I</span>
+                CLEOPE <span className={styles.metallicTextSpan}>Haty I</span>
             </h1>
 
 
