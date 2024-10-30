@@ -13,6 +13,7 @@ export function getNicknameFromToken(token) {
       "cele.baldassarre": { nickname: "Maria Celeste Baldassarre", type: "regular" },
       "Machi_123": { nickname: "Maria chiara ghisolfi", type: "regular" },
       "Ludobalestrucci": { nickname: "Ludovica Balestrucci", type: "regular" },
+      "lugi_dm": { nickname: "Luigi De Martino", type: "regular" },
   };
   
   return validTokens[token] || null;
