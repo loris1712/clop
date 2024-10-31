@@ -15,6 +15,9 @@ export function getNicknameFromToken(token) {
       "Machi_123": { nickname: "Maria chiara ghisolfi", type: "regular" },
       "Ludobalestrucci": { nickname: "Ludovica Balestrucci", type: "regular" },
       "lugi_dm": { nickname: "Luigi De Martino", type: "regular" },
+      "_la_more": { nickname: "Chiara Morelli", type: "regular" },
+      "_daiida_": { nickname: "Daida Scafa", type: "regular" },
+      "alessandrocarosetti_": { nickname: "Alessandro Carosetti", type: "regular" },
   };
   
   return validTokens[token] || null;
