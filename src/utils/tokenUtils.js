@@ -18,6 +18,10 @@ export function getNicknameFromToken(token) {
       "_la_more": { nickname: "Chiara Morelli", type: "regular" },
       "_daiida_": { nickname: "Daida Scafa", type: "regular" },
       "alessandrocarosetti_": { nickname: "Alessandro Carosetti", type: "regular" },
+      "user123": { nickname: "Cleope User", type: "vip" },
+      "lucasabatoo": { nickname: "Luca Sabato", type: "regular" },
+      "eternidad_key": { nickname: "Khouloud", type: "vip" },
+      "nurpinna": { nickname: "Nur Pinna", type: "regular" },
   };
   
   return validTokens[token] || null;
