@@ -22,6 +22,7 @@ export function getNicknameFromToken(token) {
       "lucasabatoo": { nickname: "Luca Sabato", type: "regular" },
       "eternidad_key": { nickname: "Khouloud", type: "vip" },
       "nurpinna": { nickname: "Nur Pinna", type: "regular" },
+      "checcacocozza": { nickname: "Francesca Cocozza", type: "Girlfriend" },
   };
   
   return validTokens[token] || null;
