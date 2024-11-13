@@ -28,6 +28,8 @@ export function getNicknameFromToken(token) {
       "paolapuglisi": { nickname: "Paola Puglisi", type: "regular" },
       "aleezambi": { nickname: "Alessandra Zambianco", type: "regular" },
       "elena_masselli": { nickname: "Elena Masselli", type: "regular" },
+      "lilitgrigoriann": { nickname: "Lilit Grigoryan", type: "regular" },
+      "simone_manzo": { nickname: "Simone Manzo", type: "regular" },
   };
   
   return validTokens[token] || null;
