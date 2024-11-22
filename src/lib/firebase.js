@@ -3,14 +3,13 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apikey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,  
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,  
-    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL, 
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,  
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,  
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,  
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+    apiKey: "AIzaSyDA2ACwYzqZNtBnkM5tFgZtAgsyb9gbNc8",
+  authDomain: "cleope-80cdc.firebaseapp.com",
+  projectId: "cleope-80cdc",
+  storageBucket: "cleope-80cdc.firebasestorage.app",
+  messagingSenderId: "101049745166",
+  appId: "1:101049745166:web:f9d506f17fb3f57739a15f",
+  measurementId: "G-57VJGES842"
 };
 
 const app = initializeApp(firebaseConfig);
