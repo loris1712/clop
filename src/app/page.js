@@ -223,6 +223,12 @@ export default function Home() {
         >
           VOLT Access
         </button>
+
+        <a href="https://cleope.framer.website/" target="_blank"
+          className=" text-white text-[11px] text-center"
+        >
+          Visit our site
+        </a>
       </main>
 
       {/* Popup */}
