@@ -45,7 +45,7 @@ export default function Home() {
           if (!codeSnapshot.empty) {
             // Reindirizza a /home se il codice è valido
             //alert("Codice valido! Reindirizzamento in corso...");
-            router.push("/home");
+            router.push(`/home?code=${code}`);
           } else {
             alert("Invalid code. Please check and try again.");
           }

@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Popup({ type, onClose, onSaveCode, onSwitchPopUp }) {
+export default function Popup({ type, onClose, onSaveCode, onSwitchPopUp, usercode }) {
   const [userCode, setUserCode] = useState("");
   const [userCodeList, setUserCodeList] = useState("");
   const [userCodeTable, setUserCodeTable] = useState("");
   const [email, setEmail] = useState("");
   const [instagram, setInstagram] = useState("");
+
+  useEffect(() => {
+    console.log(usercode)
+    if(usercode){
+      setUserCodeList(usercode)
+      setUserCodeTable(usercode)
+    }
+  }, [usercode]);
 
   const renderContent = () => {
     if (type === "login") {
