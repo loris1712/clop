@@ -53,6 +53,16 @@ export default function Home() {
           console.error("Errore durante il controllo del codice:", error);
         }
       }
+
+      const action = urlParams.get("action");
+      if (action) {
+        if (["volt", "request", "login"].includes(action)) {
+          setActivePopup(action);
+        } else {
+          console.error("Invalid action parameter.");
+        }
+      }
+
     };
 
     checkCodeInURL();
