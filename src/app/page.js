@@ -91,30 +91,50 @@ export default function Home() {
           where("email", "==", data.email)
         );
         const emailSnapshot = await getDocs(emailQuery);
+      
         const instagramQuery = query(
           collection(db, "users"),
           where("instagram", "==", data.instagram)
         );
         const instagramSnapshot = await getDocs(instagramQuery);
-
-        if (!emailSnapshot.empty) {
-          alert("This email is already in use!");
+      
+        if (!emailSnapshot.empty || !instagramSnapshot.empty) {
+          let existingUser;
+          
+          // Recupera i dati dell'utente che corrispondono
+          if (!emailSnapshot.empty) {
+            existingUser = emailSnapshot.docs[0].data();
+          } else if (!instagramSnapshot.empty) {
+            existingUser = instagramSnapshot.docs[0].data();
+          }
+      
+          const existingCode = existingUser.userCode; // Recupera il codice esistente
+      
+          // Invia email con il codice già presente
+          sendEmail({
+            to: existingUser.email,
+            subject: "Benvenuto in CLEOPE: Il tuo codice di accesso esclusivo",
+            text: `Ecco il tuo codice: ${existingCode}`,
+            html: `<h1>Benvenuto in CLEOPE!</h1>
+              <p><strong>Il tuo codice è:</strong> <span style="font-size: 24px; color: #0049ff;">${existingCode}</span></p>
+              <p>Clicca sul link qui sotto per utilizzare il tuo codice e accedere ai nostri eventi sulla piattaforma:</p>
+              <a href="http://localhost:3000?code=${existingCode}" style="color: #007bff;">http://localhost:3000?code=${existingCode}</a>
+              <p>Grazie per esserti unito a CLEOPE!</p>`,
+          });
+      
+          alert("This email or Instagram is already in use! We have resent the code to your email.");
           return;
         }
-
-        if (!instagramSnapshot.empty) {
-          alert("This Instagram is already in use!");
-          return;
-        }
+      
+        // Genera un nuovo codice se email e Instagram non sono già presenti
         const uniqueCode = Math.random().toString(36).substring(2, 8).toUpperCase();
         await addDoc(collection(db, "users"), {
           ...data,
           userCode: uniqueCode,
           createdAt: serverTimestamp(),
         });
-
-        // Invia l'email con il codice
-        alert(`Your code is ${uniqueCode}. We just sent you an email.`);
+      
+        // Invia l'email con il nuovo codice
         sendEmail({
           to: data.email,
           subject: "Benvenuto in CLEOPE: Il tuo codice di accesso esclusivo",
@@ -124,8 +144,9 @@ export default function Home() {
             <p>Clicca sul link qui sotto per utilizzare il tuo codice e accedere ai nostri eventi sulla piattaforma:</p>
             <a href="http://localhost:3000?code=${uniqueCode}" style="color: #007bff;">http://localhost:3000?code=${uniqueCode}</a>
             <p>Grazie per esserti unito a CLEOPE!</p>`,
-        });        
-
+        });
+      
+        alert(`Your code is ${uniqueCode}. We just sent you an email.`);
         setActivePopup(null);
       } else {
           // Caso per "lists"
