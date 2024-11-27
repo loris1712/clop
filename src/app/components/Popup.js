@@ -76,12 +76,17 @@ export default function Popup({ type, onClose, onSaveCode, onSwitchPopUp, userco
     if (type === "volt") {
       return (
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <header className="mb-0">
+          <div className="w-20 h-20 bg-transparent rounded-full flex items-center justify-center m-auto">
+            <img src="https://framerusercontent.com/images/CLPGm5HaInLJZfyqZUeJ0ovsLI4.jpeg" alt="Logo" className="h-20 w-auto" />
+          </div>
+        </header>
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Lista */}
           <div className="p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-2">VOLT List</h3>
             <div className="text-[12px] mb-2">
-              <p>Enter your personal code to be added to the CLEOPE list for the VOLT event on December 12th. Being added to the list does not guarantee access to the event. It is required to participate in the pre-selection process at the entrance.</p>
+              <p>Enter your personal code to be request to join the CLEOPE list for the VOLT event on December 12th. It does not guarantee access to the event. It is required to participate in the pre-selection process at the entrance. You will receive a confirmation by email.</p>
             </div>
            
             <input
