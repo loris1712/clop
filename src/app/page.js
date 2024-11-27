@@ -168,13 +168,14 @@ export default function Home() {
             if (type === "lista") {
               sendEmail({
                 to: userEmail,
-                subject: "Sei nella lista CLEOPE per VOLT",
-                text: `Grazie per esserti unito alla lista CLEOPE per l'evento VOLT del 12 Dicembre 2024.`,
+                subject: "Grazie di aver richiesto l'accesso alla ista CLEOPE per VOLT 12 Dicembre 2024",
+                text: `Grazie di aver richiesto l'accesso alla ista CLEOPE per VOLT 12 Dicembre 2024.`,
                 html: `
-                  <h1>Grazie per esserti unito alla lista CLEOPE per VOLT!</h1>
-                  <p>Caro Ospite,</p>
-                  <p>Ora sei ufficialmente nella lista CLEOPE per l'evento VOLT del <strong>12 Dicembre 2024</strong>.</p>
-                  <p>Ti ricordiamo che essere nella lista non garantisce l'ingresso, in quanto ci sarà un processo di selezione all'ingresso per tutti i partecipanti.</p>
+                  <h1>Grazie per aver richiesto l'accesso alla lista CLEOPE per VOLT - 12 Dicembre 2024!</h1>
+                  <p>Caro ${userData.instagram},</p>
+                  <p>Abbiamo ricevuto la tua richiesta di accesso alla lista CLEOPE per l'evento <strong>VOLT</strong>, che si terrà il <strong>12 Dicembre 2024</strong>.</p>
+                  <p>Ti ricordiamo che l'accesso in lista è parte del processo di pre-selezione all'ingresso. Essere nella lista non garantisce automaticamente l'ingresso all'evento, poiché tutti i partecipanti saranno sottoposti a una selezione all'arrivo.</p>
+                  <p>Per completare la tua iscrizione in lista, ti invieremo una email di conferma all'indirizzo associato alla tua richiesta. Controlla la tua casella di posta e segui le istruzioni per confermare la tua presenza.</p>
                   <p>Rimani aggiornato per ulteriori comunicazioni via email!</p>
                   <p><em>Team CLEOPE</em></p>
                 `,
@@ -186,7 +187,7 @@ export default function Home() {
                 text: `Grazie per il tuo interesse nella prenotazione di un tavolo per l'evento VOLT del 12 Dicembre 2024.`,
                 html: `
                   <h1>Grazie per il tuo interesse nella prenotazione di un tavolo!</h1>
-                  <p>Caro Ospite,</p>
+                  <p>Caro ${userData.instagram},</p>
                   <p>La tua richiesta di prenotazione di un tavolo per l'evento VOLT del <strong>12 Dicembre 2024</strong> è stata ricevuta.</p>
                   <p>Il nostro team ti contatterà a breve per finalizzare la prenotazione.</p>
                   <p><em>Team CLEOPE</em></p>
