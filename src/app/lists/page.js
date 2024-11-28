@@ -142,11 +142,11 @@ function Lists() {
   return (
     <div style={{ padding: "20px", zIndex: 2 }}>
       <MenuAdmin />
-      <h1 className="font-semibold text-[20px] text-center">VOLT | CLEOPE Tables & Lists</h1>
+      <h1 className="font-semibold text-[20px] text-center mb-6 mt-6">VOLT | CLEOPE Tables & Lists</h1>
 
-      <div className="w-[80vw]">
+      <div lassName="m-auto mt-24" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
       <div className="flex align-center">
-        <h2 className="font-semibold">Tables</h2>
+        <h2 className="font-semibold">Tables - {filteredTables.length}</h2>
         <button onClick={() => toggleTable("tables")} className="font-regular mb-4 ml-auto">
           {collapsedTables.tables ? "Show Tables" : "Hide Tables"}
         </button>
@@ -188,10 +188,10 @@ function Lists() {
         )}
       </div>
 
-      <div className="w-[80vw] mt-24">
+      <div className="m-auto mt-24" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
 
         <div className="flex align-center">
-          <h2 className="font-semibold">Lists</h2>
+          <h2 className="font-semibold">Lists - {filteredLists.length}</h2>
           <button onClick={() => toggleTable("lists")} className="font-regular mb-4 ml-auto">
             {collapsedTables.lists ? "Show Lists" : "Hide Lists"}
           </button>

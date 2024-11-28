@@ -12,6 +12,7 @@ function Users() {
   const [listsData, setListsData] = useState([]);
   const [usersSearch, setUsersSearch] = useState("");
   const [listsSearch, setListsSearch] = useState("");
+  const [usersDataLength, setUsersDataLength] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ function Users() {
 
         setUsersData(users);
         setListsData(lists);
+        setUsersDataLength(users.length)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -84,11 +86,11 @@ function Users() {
   return (
     <div style={{ padding: "20px", zIndex: 2}}>
       <MenuAdmin />
-      <h1 className="font-semibold text-[20px] text-center">CLEOPE Users</h1>
+      <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Users</h1>
  
       {/* Users Table */}
-      <div style={{ marginBottom: "40px", width: '80vw' }}>
-        <h2 className="font-semibold">Users</h2>
+      <div className="m-auto" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
+        <h2 className="font-semibold">Users - {usersDataLength}</h2>
         <input
           type="text"
           placeholder="Search in Users"
