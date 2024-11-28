@@ -10,6 +10,8 @@ import styles from './Dashboard.module.css';
 function Dashboard() {
   const [usersData, setUsersData] = useState([]);
   const [listsData, setListsData] = useState([]);
+  const [usersDataLength, setUsersDataLength] = useState([]);
+  const [listsDataLength, setListsDataLength] = useState([]);
   const [usersSearch, setUsersSearch] = useState("");
   const [listsSearch, setListsSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -43,7 +45,11 @@ function Dashboard() {
         });
 
         setUsersData(users);
+
         setListsData(lists);
+
+        setUsersDataLength(users.length)
+        setListsDataLength(lists.length)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -81,11 +87,11 @@ function Dashboard() {
   return (
     <div style={{ padding: "20px", zIndex: 2 }}>
       <MenuAdmin />
-      <h1 className="font-semibold text-[20px] text-center">CLEOPE Dashboard</h1>
+      <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Dashboard</h1>
 
       {/* Users Table */}
-      <div style={{ marginBottom: "40px", width: "80vw" }}>
-        <h2 className="font-semibold">Users</h2>
+      <div className="m-auto" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
+        <h2 className="font-semibold">Users - {usersDataLength}</h2>
         <input
           type="text"
           placeholder="Search in Users"
@@ -126,8 +132,8 @@ function Dashboard() {
       </div>
 
       {/* Lists Table */}
-      <div>
-        <h2 className="font-semibold">Lists</h2>
+      <div className="m-auto" style={{ height: '15vw', overflowY: 'scroll', width: "80vw",}}>
+        <h2 className="font-semibold">Lists - {listsDataLength}</h2>
         <input
           type="text"
           placeholder="Search in Lists"
