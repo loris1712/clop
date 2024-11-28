@@ -144,7 +144,7 @@ function Lists() {
       <MenuAdmin />
       <h1 className="font-semibold text-[20px] text-center mb-6 mt-6">VOLT | CLEOPE Tables & Lists</h1>
 
-      <div lassName="m-auto mt-24" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
+      <div className="m-auto mt-24" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
       <div className="flex align-center">
         <h2 className="font-semibold">Tables - {filteredTables.length}</h2>
         <button onClick={() => toggleTable("tables")} className="font-regular mb-4 ml-auto">
