@@ -1,2 +1,13 @@
+/* Default style for desktop or larger screens */
+.userTable, .listTable {
+    height: auto; /* o qualsiasi altra altezza predefinita */
+}
+
+/* Media query per tablet e telefono */
+@media (max-width: 768px) {
+    .userTable, .listTable {
+        height: 45vh !important; /* Imposta l'altezza al 45% della viewport per schermi più piccoli */
+    }
+}
 
   

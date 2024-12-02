@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{overflowY:'scroll'}}
       >
         {/* Avvolgi il contenuto del layout con AuthProvider */}
         <AuthProvider>{children}</AuthProvider>

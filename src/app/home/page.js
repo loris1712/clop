@@ -157,7 +157,7 @@ export default function CardPage() {
               html: `<h1>Benvenuto in CLEOPE!</h1>
                 <p><strong>Il tuo codice è:</strong> <span style="font-size: 24px; color: #0049ff;">${uniqueCode}</span></p>
                 <p>Clicca sul link qui sotto per utilizzare il tuo codice e accedere ai nostri eventi sulla piattaforma:</p>
-                <a href="http://localhost:3000?code=${uniqueCode}" style="color: #007bff;">http://localhost:3000?code=${uniqueCode}</a>
+                <a href="https://cleope-sigma.vercel.app/?code=${uniqueCode}" style="color: #007bff;">https://cleope-sigma.vercel.app/?code=${uniqueCode}</a>
                 <p>Grazie per esserti unito a CLEOPE!</p>`,
             });        
     

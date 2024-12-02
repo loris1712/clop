@@ -85,12 +85,12 @@ function Dashboard() {
   }
 
   return (
-    <div style={{ padding: "20px", zIndex: 2 }}>
+    <div style={{ padding: "20px", zIndex: 2, marginTop: "20rem" }}>
       <MenuAdmin />
       <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Dashboard</h1>
 
       {/* Users Table */}
-      <div className="m-auto" style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
+      <div className={`${styles.userTable} m-auto`} style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
         <h2 className="font-semibold">Users - {usersDataLength}</h2>
         <input
           type="text"
@@ -132,7 +132,7 @@ function Dashboard() {
       </div>
 
       {/* Lists Table */}
-      <div className="m-auto" style={{ height: '15vw', overflowY: 'scroll', width: "80vw",}}>
+      <div className={`${styles.listTable} m-auto`} style={{ height: '15vw', overflowY: 'scroll', width: "80vw",}}>
         <h2 className="font-semibold">Lists - {listsDataLength}</h2>
         <input
           type="text"
