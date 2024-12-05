@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase";
 import withAuth from "../hoc/withAuth";
 import MenuAdmin from "../components/MenuAdmin";
 import styles from './Dashboard.module.css';
+import UserTable from "../components/UserTable";
 
 function Dashboard() {
   const [usersData, setUsersData] = useState([]);
@@ -15,6 +16,7 @@ function Dashboard() {
   const [usersSearch, setUsersSearch] = useState("");
   const [listsSearch, setListsSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [cardStatus, setCardStatus] = useState("pending");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -84,52 +86,22 @@ function Dashboard() {
     return <div>Loading...</div>;
   }
 
+  const handleSendCard = async (userCode) => {
+    try {
+      console.log(`Sending card for user: ${userCode}`);
+      alert("Card sent successfully!");
+    } catch (error) {
+      console.error("Error sending card:", error);
+      alert("Failed to send card. Please try again.");
+    }
+  };
+  
   return (
-    <div style={{ padding: "20px", zIndex: 2, marginTop: "20rem" }}>
+    <div className="mt-[20rem] md:mt-[6rem]" style={{ padding: "20px", zIndex: 2 }}>
       <MenuAdmin />
       <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Dashboard</h1>
 
-      {/* Users Table */}
-      <div className={`${styles.userTable} m-auto`} style={{ marginBottom: "40px", width: "80vw", height: '15vw', overflowY: 'scroll' }}>
-        <h2 className="font-semibold">Users - {usersDataLength}</h2>
-        <input
-          type="text"
-          placeholder="Search in Users"
-          value={usersSearch}
-          onChange={(e) => setUsersSearch(e.target.value)}
-          className="mt-2 bg-black border border-gray-700 rounded-lg px-3 py-2 text-white text-[12px] focus:outline-none focus:ring-0 focus:border-gray-700 w-full mb-4"
-        />
-        <table className="" border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr>
-              <th className="mr-2 text-left pb-2" onClick={() => setUsersData(sortData(usersData, "createdAt"))}>Created At</th>
-              <th className="mr-2 text-left pb-2" onClick={() => setUsersData(sortData(usersData, "email"))}>Email</th>
-              <th className="mr-2 text-left pb-2" onClick={() => setUsersData(sortData(usersData, "instagram"))}>Instagram</th>
-              <th className="mr-2 text-left pb-2" onClick={() => setUsersData(sortData(usersData, "userCode"))}>User Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredUsers.map((user) => (
-              <tr key={user.id}>
-                <td className="pr-8">{user.createdAt}</td>
-                <td className="pr-8">
-                  {user.email ? <a href={`mailto:${user.email}`}>{user.email}</a> : "No email"}
-                </td>
-                <td className="pr-8">
-                  {user.instagram ? (
-                    <a href={`https://instagram.com/${user.instagram}`} target="_blank" rel="noopener noreferrer">
-                      {user.instagram}
-                    </a>
-                  ) : (
-                    "No Instagram"
-                  )}
-                </td>
-                <td className="pr-8">{user.userCode}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <UserTable users={filteredUsers} />
 
       {/* Lists Table */}
       <div className={`${styles.listTable} m-auto`} style={{ height: '15vw', overflowY: 'scroll', width: "80vw",}}>

@@ -16,11 +16,15 @@ export default function CardPage() {
     const [loading, setLoading] = useState(true);
     const [activePopup, setActivePopup] = useState(null);
     const [userCode, setUserCode] = useState(null);
+    const [cardStatus, setCardStatus] = useState("pending");
+    const [cardType, setCardType] = useState("pending");
+    const [userIg, setUserIG] = useState(null);
+    const [userEmail, setUserEmail] = useState(null);
 
     useEffect(() => {
         const checkCodeInURL = async () => {
           const urlParams = new URLSearchParams(window.location.search);
-          const code = urlParams.get("code");
+          const code = urlParams.get("userCode");
           
           if (code) {
             setUserCode(code)
@@ -29,6 +33,57 @@ export default function CardPage() {
     
         checkCodeInURL();
       }, []);
+
+      useEffect(() => {
+        if (userCode) {
+          const fetchCardStatus = async () => {
+            try {
+              const q = query(collection(db, "users_cards"), where("userCode", "==", userCode));
+              const querySnapshot = await getDocs(q);
+    
+              if (!querySnapshot.empty) {
+                const userData = querySnapshot.docs[0].data();
+                setCardStatus(userData.cardStatus || "pending");
+                setCardType();
+              } else {
+                setCardStatus("pending");
+              }
+            } catch (error) {
+              console.error("Error fetching card status:", error);
+            } finally {
+              setLoading(false);
+            }
+          };
+    
+          fetchCardStatus();
+        }
+      }, [userCode]);
+
+      useEffect(() => {
+        if (userCode) {
+          const fetchCardStatus = async () => {
+            try {
+              const q = query(collection(db, "users"), where("userCode", "==", userCode));
+              const querySnapshot = await getDocs(q);
+    
+              if (!querySnapshot.empty) {
+                const userData = querySnapshot.docs[0].data();
+                console.log(userData);
+                setUserIG(userData.instagram);
+                setUserEmail(userData.email);
+              } else {
+                console.log("No user");
+              }
+            } catch (error) {
+              console.error("Error fetching card status:", error);
+            } finally {
+              setLoading(false);
+            }
+          };
+    
+          fetchCardStatus();
+        }
+      }, [userCode]);
 
     useEffect(() => {
         // Recupera il token dall'URL e ottieni i dati del nickname
@@ -260,7 +315,10 @@ export default function CardPage() {
                 CLEOPE <span className={styles.metallicTextSpan}></span>
             </h1>
 
-            <div className="flex items-center">
+            <div className="md:flex items-center">
+                <div>
+                    <p className="text-[12px] mr-4">Card Status: {cardStatus} </p>
+                </div>
                 <button
                     onClick={() => setActivePopup("volt")}
                     className="bg-white rounded-[100px] hover:brightness-110 text-black py-2 px-4 font-semibold text-[11px]"
@@ -270,13 +328,16 @@ export default function CardPage() {
                 <div>
                     <p className="text-[12px] ml-4">User Code: {userCode} </p>
                 </div>
-
             </div>
             
-            
-
             {/* Card */}
-            <Card nickname={nicknameData.nickname} type={nicknameData.type} />
+            {cardStatus === "pending" ? (
+                <div>
+                    <Card nickname={"Your Card is under review"} type={"Unknown"} code={"Unknown"} />
+                </div>
+            ) : (
+                <Card nickname={userIg} type={nicknameData.type} code={userCode} />
+            )}
 
             {/* Popup */}
             {activePopup && (

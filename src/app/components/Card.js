@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Card.module.css';
 import Barcode from './Barcode';
 
-const Card = ({ nickname, type }) => {
+const Card = ({ nickname, type, code }) => {
     return (
         <div className={styles.card}>
             <div className={styles.cardInner}>
@@ -31,7 +31,7 @@ const Card = ({ nickname, type }) => {
 
                 <div className={type === 'vip' ? styles.cardBackVip : styles.cardBack}>
                     <img src="./logo.svg" alt="Logo" className={styles.logoBack} />
-                    <Barcode data="0873587315308350" />
+                    <div>{code}</div>
                     <p className={styles.type}>{type}</p>
                 </div>
             </div>

@@ -79,9 +79,10 @@ export default function Home() {
         const userCodeSnapshot = await getDocs(userCodeQuery);
 
         if (!userCodeSnapshot.empty) {
+          let user=userCodeSnapshot.docs[0].data()
           //alert("Login eseguito con successo!");
           setActivePopup(null);
-          router.push("/home");
+          router.push(`/home?userCode=${user.userCode}`);
         } else {
           alert("Code not found.");
         }
@@ -119,7 +120,15 @@ export default function Home() {
               <p><strong>Il tuo codice è:</strong> <span style="font-size: 24px; color: #0049ff;">${existingCode}</span></p>
               <p>Clicca sul link qui sotto per utilizzare il tuo codice e accedere ai nostri eventi sulla piattaforma:</p>
               <a href="https://cleope-sigma.vercel.app/?code=${existingCode}" style="color: #007bff;">https://cleope-sigma.vercel.app/?code=${existingCode}</a>
-              <p>Grazie per esserti unito a CLEOPE!</p>`,
+              <p>Grazie per esserti unito a CLEOPE!</p>
+              <p><em>Team CLEOPE</em></p>
+              <a href="https://www.instagram.com/cleopeofficial/" style="color: #007bff;">
+          Seguici su Instagram
+        </a>
+        <a href="https://www.tiktok.com/@cleopeofficial?_t=ZN-8ry8NBWWrKA&_r=1" style="color: #007bff;">
+          Seguici su TikTok
+        </a>
+              `,
           });
       
           alert("This email or Instagram is already in use! We have resent the code to your email.");
@@ -143,7 +152,15 @@ export default function Home() {
             <p><strong>Il tuo codice è:</strong> <span style="font-size: 24px; color: #0049ff;">${uniqueCode}</span></p>
             <p>Clicca sul link qui sotto per utilizzare il tuo codice e accedere ai nostri eventi sulla piattaforma:</p>
             <a href="https://cleope-sigma.vercel.app/?code=${uniqueCode}" style="color: #007bff;">https://cleope-sigma.vercel.app/?code=${uniqueCode}</a>
-            <p>Grazie per esserti unito a CLEOPE!</p>`,
+            <p>Grazie per esserti unito a CLEOPE!</p>
+            <p><em>Team CLEOPE</em></p>
+            <a href="https://www.instagram.com/cleopeofficial/" style="color: #007bff;">
+          Seguici su Instagram
+        </a>
+        <a href="https://www.tiktok.com/@cleopeofficial?_t=ZN-8ry8NBWWrKA&_r=1" style="color: #007bff;">
+          Seguici su TikTok
+        </a>
+        `,
         });
       
         alert(`Your code is ${uniqueCode}. We just sent you an email.`);
@@ -199,6 +216,12 @@ export default function Home() {
                   <p>Per completare la tua iscrizione in lista, ti invieremo una email di conferma all'indirizzo associato alla tua richiesta. Controlla la tua casella di posta e segui le istruzioni per confermare la tua presenza.</p>
                   <p>Rimani aggiornato per ulteriori comunicazioni via email!</p>
                   <p><em>Team CLEOPE</em></p>
+                  <a href="https://www.instagram.com/cleopeofficial/" style="color: #007bff;">
+          Seguici su Instagram
+        </a>
+        <a href="https://www.tiktok.com/@cleopeofficial?_t=ZN-8ry8NBWWrKA&_r=1" style="color: #007bff;">
+          Seguici su TikTok
+        </a>
                 `,
               });              
             } else if (type === "tavoli") {
@@ -212,6 +235,12 @@ export default function Home() {
                   <p>La tua richiesta di prenotazione di un tavolo per l'evento VOLT del <strong>12 Dicembre 2024</strong> è stata ricevuta.</p>
                   <p>Il nostro team ti contatterà a breve per finalizzare la prenotazione.</p>
                   <p><em>Team CLEOPE</em></p>
+                  <a href="https://www.instagram.com/cleopeofficial/" style="color: #007bff;">
+          Seguici su Instagram
+        </a>
+        <a href="https://www.tiktok.com/@cleopeofficial?_t=ZN-8ry8NBWWrKA&_r=1" style="color: #007bff;">
+          Seguici su TikTok
+        </a>
                 `,
               });              
             }
