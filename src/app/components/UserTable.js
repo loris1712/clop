@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, doc, setDoc, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import styles from "../Dashboard/Dashboard.module.css";
+import styles from './Dashboard.module.css';
 
 function UserTable({ users }) {
   const [cardStatuses, setCardStatuses] = useState({});
