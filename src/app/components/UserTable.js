@@ -66,6 +66,7 @@ function UserTable({ users }) {
       const userCardRef = doc(db, "users_cards", user.userCode);
       await setDoc(userCardRef, {
         cardStatus: "received",
+        userCode: user.userCode,
       }, { merge: true });  
 
       console.log(`Card status updated or created for userCode: ${user.userCode}`);
