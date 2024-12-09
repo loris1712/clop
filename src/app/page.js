@@ -266,12 +266,12 @@ export default function Home() {
 
       {/* Buttons */}
       <main className="w-full max-w-sm flex flex-col gap-4">
-        <button
+        {/*<button
           onClick={() => setActivePopup("login")}
           className="bg-[#2b2b2b] rounded-[100px] hover:brightness-110 text-white py-3 px-8 font-semibold text-[11px]"
         >
           Insert Your Code To Access
-        </button>
+        </button>*/}
         <button
           onClick={() => setActivePopup("request")}
           className="bg-[#2b2b2b] rounded-[100px] hover:brightness-110 text-white py-3 px-8 font-semibold text-[11px]"
