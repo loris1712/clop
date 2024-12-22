@@ -106,11 +106,10 @@ function SendCardsPage() {
       }
 
       // Crea l'oggetto email
-      const subject = "Grazie per il tuo interesse - La tua card CLEOPE per il Private Party del 29 Dicembre!";
+      const subject = "La tua card CLEOPE per il Private Party del 29 Dicembre!";
       const htmlContent = `
-        <h1>Benvenuto in CLEOPE!</h1>
-        <p>Grazie per il tuo interesse nel nostro evento Private Party il 29 Dicembre 2024 al Safari Club di Salerno! La tua fidelity card è pronta.</p>
-        <p><strong>Attenzione:</strong> La card non garantisce l'ingresso, poiché ci sarà una selezione finale all'ingresso da parte della sicurezza, basata sul dresscode.</p>
+        <h1>Grazie per aver accettato il nostro invito.</h1>
+        <p>Hai accettato l'invito al Private Party il 29 Dicembre 2024 al Safari Club di Salerno! La tua fidelity card è pronta.</p>
         <p>Puoi visualizzare e utilizzare la tua fidelity card al seguente link:</p>
         <a href="https://cleope-sigma.vercel.app/home?userCode=${userCode}" style="color: #007bff;">
           https://cleope-sigma.vercel.app/home?userCode=${userCode}

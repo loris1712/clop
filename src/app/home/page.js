@@ -63,27 +63,28 @@ export default function CardPage() {
         if (userCode) {
           const fetchCardStatus = async () => {
             try {
-              const q = query(collection(db, "users"), where("userCode", "==", userCode));
-              const querySnapshot = await getDocs(q);
-    
-              if (!querySnapshot.empty) {
-                const userData = querySnapshot.docs[0].data();
+              // Recupera il documento direttamente usando l'ID
+              const userCardRef = doc(db, "users_cards2", userCode); // Ottieni il riferimento al documento
+              const userCardSnapshot = await getDoc(userCardRef); // Recupera i dati del documento
+      
+              if (userCardSnapshot.exists()) {
+                const userData = userCardSnapshot.data(); // Ottieni i dati del documento
                 console.log(userData);
-                setUserIG(userData.instagram);
-                setUserEmail(userData.email);
+      
+                setUserEmail(userData.userCode);
               } else {
-                console.log("No user");
+                console.log("No user found with the given ID.");
               }
             } catch (error) {
               console.error("Error fetching card status:", error);
             } finally {
-              setLoading(false);
+              setLoading(false); // Ferma il caricamento
             }
           };
-    
-          fetchCardStatus();
+      
+          fetchCardStatus(); // Chiama la funzione fetchCardStatus
         }
-      }, [userCode]);
+      }, [userCode]);      
 
     useEffect(() => {
         // Recupera il token dall'URL e ottieni i dati del nickname
@@ -104,8 +105,8 @@ export default function CardPage() {
         } else {
             // Se non c'è un token, imposta un messaggio di fallback
             setNicknameData({
-                nickname: 'Your Card is under review',
-                type: 'unknown',
+                nickname: userEmail,
+                type: 'Invited by',
             });
         }
 
@@ -315,40 +316,56 @@ export default function CardPage() {
                 CLEOPE <span className={styles.metallicTextSpan}></span>
             </h1>
 
-            <div className="md:flex items-center">
-                <div>
-                    <p className="text-[12px] mr-4">Card Status: {cardStatus} </p>
-                </div>
-                <button
-                    onClick={() => setActivePopup("volt")}
-                    className="bg-white rounded-[100px] hover:brightness-110 text-black py-2 px-4 font-semibold text-[11px]"
-                    >
-                    VOLT Access
-                </button>
-                <div>
-                    <p className="text-[12px] ml-4">User Code: {userCode} </p>
-                </div>
+            <div className="flex items-center gap-6 md:gap-10 mt-8">
+        <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
+          <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
+            data
+          </p>
+          <div className="flex items-center">
+            <p className="md:text-[32px] text-[28px] font-semibold text-white">29</p>
+            <div>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">dic</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">2024</p>
             </div>
-            
-            {/* Card */}
-            {cardStatus === "pending" ? (
-                <div>
-                    <Card nickname={"Your Card is under review"} type={"Unknown"} code={"Unknown"} />
-                </div>
-            ) : (
-                <Card nickname={userIg} type={nicknameData.type} code={userCode} />
-            )}
+          </div>
+        </div>
 
-            {/* Popup */}
-            {activePopup && (
-                <Popup
-                type={activePopup}
-                onClose={() => setActivePopup(null)}
-                onSaveCode={handleSaveCode}
-                onSwitchPopUp={() => setActivePopup("request")}
-                usercode={userCode}
-                />
-            )}
+        <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
+          <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
+            Orario
+          </p>
+          <div className="flex items-center">
+            <p className="md:text-[32px] text-[28px] font-semibold text-white">21:00</p>
+            <div>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">-</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">00:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
+          <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
+            Luogo
+          </p>
+          <a
+            href="https://maps.google.com/?q=Safari+club+salerno"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "blue" }}
+          >
+            <div className="flex items-center">
+              <p className="md:text-[32px] text-[28px] font-semibold text-[#fff]">Safari</p>
+              <div>
+                <p className="ml-2 text-[8px] font-light text-[#fff] uppercase">club</p>
+                <p className="ml-2 text-[8px] font-light text-[#fff] uppercase">salerno</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+            
+            <Card nickname={userEmail} type={"Invited by"} code={userCode} />
+
         </div>
     );
 }
