@@ -1,10 +1,22 @@
-"use client";
+'use client';
 
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function ThankYouPage() {
+  const [isClient, setIsClient] = useState(false); // Stato per determinare se siamo lato client
   const searchParams = useSearchParams();
   const text = searchParams.get("text"); // Recupera il parametro 'text' dall'URL
+
+  // Effettua il controllo lato client e imposta lo stato
+  useEffect(() => {
+    setIsClient(true); // Impostiamo lo stato a true quando il componente è montato nel client
+  }, []);
+
+  // Se non siamo lato client, mostriamo un messaggio di caricamento
+  if (!isClient) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div
