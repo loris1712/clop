@@ -1,0 +1,59 @@
+.metallicText2 {
+    font-size: 2rem; /* Dimensione del testo */
+    font-weight: 900; /* Grassetto */
+    color: transparent; /* Colore trasparente per il gradiente */
+    background: linear-gradient(
+        45deg,
+        rgba(0, 204, 255, 0.2) 5%,
+        #fff 10%,
+        rgba(0, 204, 255, 0.2) 30%,
+        #ddd 50%,
+        rgba(0, 204, 255, 0.2) 70%,
+        hsl(0, 0%, 100%) 80%,
+        #999 95%
+    ); /* Gradiente per effetto metallico */
+    background-clip: text; /* Applica il gradiente solo al testo */
+    -webkit-background-clip: text; /* Supporto per Safari */
+    position: relative; /* Necessario per il posizionamento dell'ombra */
+    text-shadow: 
+        1px 1px 2px rgba(0, 204, 255, 0.3), /* Ombra chiara */
+        2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra scura */
+    transition: transform 0.2s ease-in-out; /* Transizione per l'effetto hover */
+}
+
+.metallicText{
+    font-size: 2rem; /* Dimensione del testo */
+    font-weight: 900; /* Grassetto */
+    color: transparent; /* Colore trasparente per il gradiente */
+    background: linear-gradient(
+        45deg,
+        #999 5%,
+        #fff 10%,
+        #ccc 30%,
+        #ddd 50%,
+        #ccc 70%,
+        #fff 80%,
+        #999 95%
+    ); /* Gradiente per effetto metallico */
+    background-clip: text; /* Applica il gradiente solo al testo */
+    -webkit-background-clip: text; /* Supporto per Safari */
+    position: relative; /* Necessario per il posizionamento dell'ombra */
+    text-shadow: 
+        1px 1px 2px rgba(255, 255, 255, 0.5), /* Ombra chiara */
+        2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra scura */
+    transition: transform 0.2s ease-in-out; /* Transizione per l'effetto hover */
+}
+
+.metallicTextSpan{
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.countSpan{
+    font-size: 0.6rem;
+}
+
+/* Effetto hover */
+.metallicText:hover {
+    transform: translateY(-2px); /* Sollevamento del testo al passaggio del mouse */
+}
