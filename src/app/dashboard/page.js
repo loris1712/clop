@@ -12,7 +12,7 @@ function Dashboard() {
   
   return (
     <div>
-      <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Dashboard</h1>
+      <h1 className="font-semibold text-[20px] text-center mb-6">CLEOPE Private Party Dashboard</h1>
 
       <InvitationsTable />
     </div>

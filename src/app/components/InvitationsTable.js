@@ -204,7 +204,7 @@ function SendCardsPage() {
                 <td>
                   <button
                     onClick={() => handleSendCard(invited.email, invited.userCode)}
-                    className="bg-blue-500 text-white px-3 py-2 rounded"
+                    className="bg-blue-500 text-black px-3 py-2 rounded-full bg-white"
                   >
                     Send Card
                   </button>
@@ -238,7 +238,7 @@ function SendCardsPage() {
                 <td>
                   <button
                     onClick={() => handleSendCard(requested.email, requested.userCode)}
-                    className="bg-blue-500 text-white px-3 py-2 rounded"
+                    className="bg-blue-500 text-black px-3 py-2 rounded-full bg-white"
                   >
                     Send Card
                   </button>

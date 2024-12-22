@@ -91,14 +91,14 @@ export default function RequestInvitaton() {
         {error && <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>}
         <input
           type="text"
-          placeholder="First Name"
+          placeholder="Nome"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           className="bg-black border border-gray-700 rounded-lg px-3 py-2 text-white text-[12px] focus:outline-none focus:ring-0 focus:border-gray-700 w-full mb-4"
         />
         <input
           type="text"
-          placeholder="Last Name"
+          placeholder="Cognome"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           className="bg-black border border-gray-700 rounded-lg px-3 py-2 text-white text-[12px] focus:outline-none focus:ring-0 focus:border-gray-700 w-full mb-4"
@@ -114,14 +114,14 @@ export default function RequestInvitaton() {
           type="submit"
           className="bg-white rounded-[100px] hover:brightness-110 text-black py-3 px-8 font-semibold text-[11px]"
         >
-          Request Invitation
+          Richiedi invito
         </button>
       </form>
 
       <div className="flex items-center gap-6 md:gap-10 mt-8">
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            date
+            data
           </p>
           <div className="flex items-center">
             <p className="md:text-[32px] text-[28px] font-semibold text-white">29</p>
@@ -134,20 +134,20 @@ export default function RequestInvitaton() {
 
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            time
+            Orario
           </p>
           <div className="flex items-center">
             <p className="md:text-[32px] text-[28px] font-semibold text-white">21:00</p>
             <div>
-              <p className="ml-2 text-[8px] font-light text-white uppercase">till</p>
-              <p className="ml-2 text-[8px] font-light text-white uppercase">02:00</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">-</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">00:00</p>
             </div>
           </div>
         </div>
 
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            place
+            Luogo
           </p>
           <a
             href="https://maps.google.com/?q=Safari+club+salerno"

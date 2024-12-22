@@ -61,10 +61,16 @@ export default function InvitationPage() {
       </h1>
 
       <h1
-        className="text-[#888]"
-        style={{ fontSize: "14px", marginBottom: "20px", fontWeight: "300" }}
+        className="text-[#fff] mt-2"
+        style={{ fontSize: "14px",fontWeight: "300" }}
       >
-        Fashion Party
+        Sei stato invitato al Fashion Party CLEOPE,
+      </h1>
+      <h1
+        className="text-[#fff]"
+        style={{ fontSize: "14px",fontWeight: "300" }}
+      >
+      lascia la tua email per ricevere la fidelity card di accesso.
       </h1>
       <form
         onSubmit={handleEmailSubmit}
@@ -95,7 +101,7 @@ export default function InvitationPage() {
       <div className="flex items-center gap-6 md:gap-10 mt-8">
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            date
+            Data
           </p>
           <div className="flex items-center">
             <p className="md:text-[32px] text-[28px] font-semibold text-white">29</p>
@@ -108,20 +114,20 @@ export default function InvitationPage() {
 
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            time
+            Orario
           </p>
           <div className="flex items-center">
             <p className="md:text-[32px] text-[28px] font-semibold text-white">21:00</p>
             <div>
-              <p className="ml-2 text-[8px] font-light text-white uppercase">till</p>
-              <p className="ml-2 text-[8px] font-light text-white uppercase">02:00</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">-</p>
+              <p className="ml-2 text-[8px] font-light text-white uppercase">00:00</p>
             </div>
           </div>
         </div>
 
         <div className="py-2" style={{ borderTop: "0.5px solid #ffffff6e", textAlign: "left" }}>
           <p className="text-[8px] font-light text-white uppercase mt-2" style={{ letterSpacing: "1.5px" }}>
-            place
+            luogo
           </p>
           <a
             href="https://maps.google.com/?q=Safari+club+salerno"
