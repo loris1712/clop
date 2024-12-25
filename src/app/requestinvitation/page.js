@@ -166,6 +166,35 @@ export default function RequestInvitaton() {
         </div>
       </div>
 
+      <div className="flex items-center gap-6 md:gap-10 mt-8">
+  <div 
+    className="py-2 "
+  >
+    <p 
+      className="text-[11px] font-light text-white uppercase mt-2 text-center" 
+      style={{ letterSpacing: "1.5px" }}
+    >
+      Cleope organizza eventi privati con DJset & Fashion Brands.
+    </p>
+    <p className="text-white mt-4 text-[11px] font-light">
+      Informazioni di servizio
+    </p>
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-[11px] text-white text-left px-4">
+      <li>Ingresso su invito</li>
+      <li>Fashion Brands Exhibition</li>
+      <li>Aperitif Post Dinner 21:00 - 00:00</li>
+      <li>Ospiti, DJset & Show</li>
+      <li>Make-Up Artist Exhibition</li>
+    </ul>
+    <p className="text-[11px] font-light text-white uppercase mt-4 text-center" 
+    style={{ letterSpacing: "1.5px" }}
+    >
+        Contattaci per info e listino champagneria: &nbsp;
+        <a href="https://www.instagram.com/cleopeofficial" target="_blank" rel="noopener noreferrer" className="text-blue-400">@cleopeofficial</a>.
+      </p>
+  </div>
+</div>
+
       <p style={{ marginTop: "40px", fontSize: "12px", color: "#888" }}>
         © Copyright 2025 CLEOPE
       </p>
