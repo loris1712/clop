@@ -42,7 +42,6 @@ export default function InvitationPage() {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
         height: "100vh",
         color: "#333",
