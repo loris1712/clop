@@ -17,6 +17,20 @@ const geistMono = localFont({
 export const metadata = {
   title: "CLEOPE | Fashion Party",
   description: "The Fashion Party in the City.",
+  openGraph: {
+    title: "CLEOPE | Fashion Party",
+    description: "The Fashion Party in the City.",
+    url: "https://cleope-sigma.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "https://firebasestorage.googleapis.com/v0/b/myvibe-63d6d.appspot.com/o/29DicStory.PNG?alt=media&token=e10489c9-9447-42df-a9a5-f0c1a0c3bac4",
+        width: 1200,
+        height: 630,
+        alt: "CLEOPE Fashion Party",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
