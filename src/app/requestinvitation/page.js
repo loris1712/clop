@@ -65,7 +65,7 @@ export default function RequestInvitaton() {
         zIndex: 2,
       }}
     >
-      <header className="mb-12">
+      <header className="mb-12" style={{paddingTop: '10rem'}}>
         <div className="w-40 h-40 rounded-full flex items-center justify-center">
           <img src="/logo.svg" alt="Logo" className="h-24 w-auto" />
         </div>
