@@ -16,8 +16,8 @@
 
 /* Body con sfondo di particelle */
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: #fff;
+  background: #0a0a0a;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   height: 100vh;
