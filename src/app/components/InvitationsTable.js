@@ -167,7 +167,7 @@ function DashboardPage() {
       </div>
 
       <footer className="mt-12 text-center text-gray-500">
-        © 2024 CLEOPE Event Management
+        © 2025 CLEOPE Event Management
       </footer>
     </div>
   );
